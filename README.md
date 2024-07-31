@@ -1,1 +1,1 @@
-# bd-2024
+Arquivos de código utilizadas nas aulas de Banco de Dados 
