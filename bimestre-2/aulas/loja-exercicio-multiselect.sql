@@ -1,3 +1,11 @@
+# Liste todos os vendedores que atenderam o Cliente 1
+
+# Liste todas os pedidos do Vendedor 1
+
+# Liste todos os pedidos do Cliente 3
+
+# Liste todos os clientes do Vendedor 3
+
 #Liste os nomes dos clientes que estão localizados na mesma cidade em que algum vendedor está baseado.
 
 #Liste os vendedores cujo salário fixo é maior que a média dos salários fixos de todos os vendedores.
