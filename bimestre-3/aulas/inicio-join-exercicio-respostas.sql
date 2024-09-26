@@ -33,4 +33,9 @@ GROUP BY ad.FK_disciplina_id;
 
 # DESAFIO!!
 # Encontre os alunos matriculados nas disciplinas ministradas por um 
-# professor cujo e-mail é "professor.a@exemplo.com"
+# professor cujo e-mail é "professor.a@example.com"
+SELECT a.nome, d.nome FROM aluno a 
+INNER JOIN alunodisciplina ad ON a.mat = ad.FK_aluno_mat
+INNER JOIN disciplina d ON d.id = ad.FK_disciplina_id
+INNER JOIN professor p ON p.siape = d.FK_prof_siape
+WHERE p.email = "professor.b@example.com";
