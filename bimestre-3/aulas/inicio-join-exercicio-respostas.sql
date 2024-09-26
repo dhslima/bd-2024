@@ -12,10 +12,16 @@ SELECT d.nome AS nomedisciplina FROM disciplina d
 INNER JOIN cursodisciplina cd ON d.id = cd.FK_disciplina_id
 INNER JOIN curso c ON cd.FK_curso_id = c.id
 WHERE c.nome = "Ciência da Computação";
+# Quais as disciplinas que o aluno "João Silva" cursa
+SELECT d.nome FROM disciplina d
+INNER JOIN alunodisciplina ad ON d.id = ad.FK_disciplina_id
+INNER JOIN aluno a ON a.mat = ad.FK_aluno_mat
+WHERE a.nome = "João Silva";
 
-SELECT nome FROM disciplina WHERE id = 1;
-SELECT FK_disciplina_id FROM cursodisciplina WHERE FK_curso_id = 1;
-SELECT id FROM curso WHERE nome = "Ciência da Computação";
+SELECT nome FROM disciplina WHERE id IN (1,3);
+SELECT FK_disciplina_id FROM alunodisciplina WHERE FK_aluno_mat = 1;
+SELECT mat FROM aluno WHERE nome = "João Silva";
+
 
 # Liste os nomes de todos os alunos e a nota mais alta que eles obtiveram em qualquer disciplina
 
