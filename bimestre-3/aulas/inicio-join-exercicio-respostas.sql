@@ -20,11 +20,17 @@ WHERE a.nome = "João Silva";
 
 # Liste os nomes de todos os alunos e a nota mais alta que eles 
 # obtiveram em qualquer disciplina
-
+SELECT a.nome, max(ad.nota) FROM aluno a
+INNER JOIN alunodisciplina ad
+ON a.mat = ad.FK_aluno_mat GROUP BY a.mat;
 
 # Liste todas as disciplinas que têm alunos matriculados, mostrando o 
 # nome da disciplina e a quantidade de alunos matriculados em cada uma
+SELECT d.nome, COUNT(ad.FK_aluno_mat) AS total FROM disciplina d
+INNER JOIN alunodisciplina ad
+ON d.id = ad.FK_disciplina_id 
+GROUP BY ad.FK_disciplina_id;
 
 # DESAFIO!!
-# Encontra os alunos matriculados nas disciplinas ministradas por um 
+# Encontre os alunos matriculados nas disciplinas ministradas por um 
 # professor cujo e-mail é "professor.a@exemplo.com"
