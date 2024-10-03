@@ -1,8 +1,4 @@
--- Ajuste na tabela usuario para incluir a cidade
--- Atualize a tabela usuario se ainda não tiver a coluna cidade
--- ALTER TABLE usuario ADD cidade VARCHAR(50);
-
--- Inserts para a tabela usuario (Clientes) com a cidade adicionada
+-- Inserts para a tabela usuario (Clientes)
 INSERT INTO usuario (id, nome, email, cidade) VALUES
 (1, 'João Silva', 'joao.silva@example.com', 'São Paulo'),
 (2, 'Maria Souza', 'maria.souza@example.com', 'Rio de Janeiro'),
