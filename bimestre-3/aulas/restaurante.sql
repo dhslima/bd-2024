@@ -1,3 +1,6 @@
+CREATE DATABASE restaurantejoins;
+USE restaurantejoins;
+
 -- Tabela de Usuários (Clientes)
 CREATE TABLE usuario (
     id INT PRIMARY KEY,
@@ -10,7 +13,8 @@ CREATE TABLE usuario (
 CREATE TABLE restaurante (
     id INT PRIMARY KEY,
     nome VARCHAR(100),
-    cidade VARCHAR(50)
+    cidade VARCHAR(50),
+    classificacao DOUBLE
 );
 
 -- Tabela de Pratos
@@ -52,4 +56,12 @@ CREATE TABLE cardapio (
     data_inicio DATE,
     data_fim DATE,
     FOREIGN KEY (FK_restaurante_id) REFERENCES restaurante(id)
+);
+
+CREATE TABLE cardapio_prato (
+	FK_cardapio_id INT,
+    FK_prato_id INT,
+    PRIMARY KEY(FK_cardapio_id, FK_prato_id),
+    FOREIGN KEY(FK_cardapio_id) REFERENCES cardapio(id),
+    FOREIGN KEY(FK_prato_id) REFERENCES prato(id)
 );
