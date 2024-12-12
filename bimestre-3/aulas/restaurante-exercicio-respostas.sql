@@ -1,9 +1,7 @@
 # Liste os nomes dos clientes que fizeram pedidos, o nome do 
 # restaurante onde o pedido foi feito e o valor total do pedido.
-
 SELECT u.nome AS cliente, r.nome AS restaurante, p.valor_total AS total
-FROM usuario u 
-INNER JOIN pedido p ON u.id = p.FK_usuario_id
+FROM usuario u INNER JOIN pedido p ON u.id = p.FK_usuario_id
 INNER JOIN restaurante r ON r.id = p.FK_restaurante_id;
 
 # Liste os nomes dos pratos e os restaurantes que os servem, junto com o preço de cada prato.
