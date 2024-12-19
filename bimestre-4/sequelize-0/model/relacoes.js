@@ -1,6 +1,8 @@
 const Produto = require("./produto");
 const Categoria = require("./categoria");
 const Detalhe = require("./detalhe");
+const Rotulo = require("./rotulo");
+const ProdutoRotulo = require("./produtorotulo");
 
 module.exports = () => {
   Categoria.hasMany(Produto, {
