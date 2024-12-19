@@ -13,24 +13,6 @@ const setupRelacoes = require("./model/relacoes");
 
     await database.sync();
     console.log("DB sync");
-
-    const createProduct = async (nome, tipo, preco, descricao) => {
-      const p = await Produto.create({
-        nome: nome,
-        tipo: tipo,
-        preco: preco,
-        descricao: descricao,
-      });
-      console.log("Produto criado: ", p.toJSON());
-    };
-
-    const readProduct = async () => {};
-
-    const readProducts = async () => {};
-
-    const updateProduct = async () => {};
-
-    const deleteProduct = async () => {};
   } catch (error) {
     console.error("Erro! ", error);
   }

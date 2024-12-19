@@ -3,7 +3,7 @@ const Categoria = require("./categoria");
 const Detalhe = require("./detalhe");
 const Rotulo = require("./rotulo");
 const ProdutoRotulo = require("./produtorotulo");
-
+// node crud.js
 module.exports = () => {
   Categoria.hasMany(Produto, {
     foreignKey: "categoria_id",
