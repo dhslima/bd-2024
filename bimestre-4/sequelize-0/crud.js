@@ -1,32 +1,37 @@
-const Produto = require('./model/produto');
-const database = require('./db');
+const Produto = require("./model/produto");
+const database = require("./db");
+const Categoria = require("./model/categoria");
+const Detalhe = require("./model/detalhe");
+const Rotulo = require("./model/rotulo");
+const ProdutoRotulo = require("./model/produtorotulo");
 
-(
-    async () => {
-        try {
-            await database.sync();
-            console.log("DB sync");
+const setupRelacoes = require("./model/relacoes");
 
-            const createProduct = async (nome, tipo, preco, descricao) => {
-                const p = await Produto.create({
-                    nome: nome,
-                    tipo: tipo,
-                    preco: preco,
-                    descricao: descricao
-                });
-                console.log('Produto criado: ', p.toJSON());
-            };
+(async () => {
+  try {
+    setupRelacoes();
 
-            await createProduct("Monitor", "Tela", "1000.00", "144hz");
-            await createProduct("Monitor", "Tela", "1000.00", "144hz");
-            await createProduct("Monitor", "Tela", "1000.00", "144hz");
-            await createProduct("Monitor", "Tela", "1000.00", "144hz");
-            await createProduct("Monitor", "Tela", "1000.00", "144hz");
+    await database.sync();
+    console.log("DB sync");
 
-        }
-        catch (error) {
-            console.error("Erro! ", error)
-        }
-    }
-)();
+    const createProduct = async (nome, tipo, preco, descricao) => {
+      const p = await Produto.create({
+        nome: nome,
+        tipo: tipo,
+        preco: preco,
+        descricao: descricao,
+      });
+      console.log("Produto criado: ", p.toJSON());
+    };
 
+    const readProduct = async () => {};
+
+    const readProducts = async () => {};
+
+    const updateProduct = async () => {};
+
+    const deleteProduct = async () => {};
+  } catch (error) {
+    console.error("Erro! ", error);
+  }
+})();
